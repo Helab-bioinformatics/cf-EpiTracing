@@ -83,9 +83,8 @@ best_params <- list(
   bst_model <- xgb.train(
     params = best_params,
     data = xgb.DMatrix(data = trainData, label = trainLabel),
-    nrounds = 300,
+    nrounds = as.integer(opt_results$Best_Par["nrounds"]),
     watchlist = list(train = xgb.DMatrix(data = trainData, label = trainLabel), test = xgb.DMatrix(data = ValidationData, label = ValidationLabel)),
-    early_stopping_rounds = 50,
     print_every_n = 1,
   )
   
@@ -152,5 +151,3 @@ best_params <- list(
   #Calculate CRC scores on colorectal adenoma samples 
   preds_adenoma <- predict(bst_model, xgb.DMatrix(adenoma_samples))
   Detection_number_CRA<-length(which(preds_adenoma>=0.5))
-
-
