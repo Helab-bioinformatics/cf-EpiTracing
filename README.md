@@ -17,3 +17,5 @@ This file provides pipeline of identifying tissue specific signatures for tissue
 This file provides pipeline of combining chromatin state annotations of tested samples in Rstudio.
 
 ## Bed files provides with genome reference data that are necessary in analyses.
+
+**##The files in the "XGBoost Machine Learning" folder include example codes for training and testing XGBoost models used in this study. Additionally, well-trained models from the study are also stored in this folder.**
